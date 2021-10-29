@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="192.168.12.13" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="192.168.12.13">
+        <serverdata>
+          <mappings>
+            <mapping deploy="human-pose-estimation.pytorch" local="$PROJECT_DIR$" web="/" />
+            <mapping local="" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

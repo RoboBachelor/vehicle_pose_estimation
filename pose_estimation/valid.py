@@ -21,7 +21,7 @@ import torch.utils.data
 import torch.utils.data.distributed
 import torchvision.transforms as transforms
 
-import _init_paths
+import __init__
 from core.config import config
 from core.config import update_config
 from core.config import update_dir

@@ -16,6 +16,19 @@ from pathlib import Path
 import torch
 import torch.optim as optim
 
+import os.path as osp
+import sys
+def add_path(path):
+    if path not in sys.path:
+        sys.path.insert(0, path)
+
+
+this_dir = osp.dirname(__file__)
+
+lib_path = osp.join(this_dir, '..', '..', 'lib')
+add_path(lib_path)
+
+
 from core.config import get_model_name
 
 
