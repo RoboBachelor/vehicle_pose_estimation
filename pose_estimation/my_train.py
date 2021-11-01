@@ -156,3 +156,22 @@ for epoch in range(config.TRAIN.BEGIN_EPOCH, config.TRAIN.END_EPOCH):
 
     print("End of current epoch")
 print("End of training!")
+
+
+def valid_speed_test():
+    # switch to val mode
+    model.eval()
+    sum_time = 0
+
+    with torch.no_grad():
+        for i in range(10):
+
+            start = time.time()
+
+            # compute output
+            output = model(input[0:1])
+
+            sum_time += time.time() - start
+
+    print("End of valid! {} seconds for 10 images!".format(sum_time))
+    model.train()

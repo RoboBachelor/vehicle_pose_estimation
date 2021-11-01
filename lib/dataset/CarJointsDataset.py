@@ -161,7 +161,14 @@ class CarJointsDataset(Dataset):
 
         # Generate target edge heatmap
         bottom_left = np.array([joints[2][0], joints[3][1]])
-        heatmap[self.num_joints] = self.generate_target_edge(joints[1], bottom_left)
+
+        # Left or right target edge
+        if joints[1][0] < joints[2][0]:
+            heatmap[self.num_joints] = self.generate_target_edge(joints[1], bottom_left)
+        elif joints[1][0] > joints[3][0]:
+            heatmap[self.num_joints] = self.generate_target_edge(joints[1], joints[3])
+
+        # Front or back target edge
         heatmap[self.num_joints + 1] = self.generate_target_edge(bottom_left, joints[3])
 
         heatmap = torch.from_numpy(heatmap)
